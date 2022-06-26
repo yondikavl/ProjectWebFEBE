@@ -12,5 +12,6 @@ Web tampilan user (fujita)
 
 Web system (Faza)
 
--MVC
--CRUD
+- MVC
+- CRUD
+
