@@ -1,6 +1,3 @@
-<?php 
-include'../403/petugas.php';
- ?>
 
 <!DOCTYPE html>
 <html>
@@ -81,7 +78,7 @@ include'../403/petugas.php';
 </table>
 <br>
 <h5>Keranjang</h5>
-<table class="table table-striped">
+<table class="table table-striped" class="container my-5">
   <thead>
     <tr>
       <th scope="col">No</th>
@@ -103,13 +100,13 @@ include'../403/petugas.php';
         <td><?=$data['id_barang']?></td>
         <td><?=$data['nama']?></td>
         <td><?=$data['harga']?></td>
-        <td><a href="../../system/petugas/sys-delete_keranjang.php?idkeranjang=<?=$data['idkeranjang']?>&idbarang=<?=$data['id_barang']?>&stok=<?=$data['stok']?>" class="btn btn-danger">Delete</a></td>
+        <td><a href="../../system/petugas/sys-delete_keranjang.php?idkeranjang=<?=$data['idkeranjang']?>&idbarang=<?=$data['id_barang']?>&stok=<?=$data['stok']?>" class="btn btn-danger" class="fas fa-trash-alt"></a></td>
       </tr>
       <?php
     }
      ?>
   </tbody>
-</table>
+</table> -->
 
 <?php 
 
@@ -126,24 +123,26 @@ while($data = $exe->fetch_array()){
 <table class="table table-striped" >
 	<thead>
 		<tr>
-      <div class="d-flex justify-content-between">
-			  <td><h6>Total Bayar</h6></td>
-      </div>
+            <div class="d-flex justify-content-between">
+			
+			<td><h6>Total Bayar</h6></td>
+			
+            </div>
 		</tr>
 		<tr>
-      <div class="d-flex justify-content-between">
-			  <td><h5>Total</h5></td>
-			  <td>Rp.</td>
-			  <td><?=$total - 1 ?></td>
-			  <td><a href="../../system/petugas/sys-checkout.php?total=<?=$total?>" class="btn btn-success">Checkout</a></td>
-		  </div>
-    </tr>
+            <div class="d-flex justify-content-between">
+			<td><h5>Total</h5></td>
+			<td>Rp.</td>
+			<td><?=$total - 1 ?></td>
+			<td><a href="../../system/petugas/sys-checkout.php?total=<?=$total?>" class="btn btn-success">Checkout</a></td>
+		    </div>
+        </tr>
 
 	</thead>
 </table>
 <style>
     .table th{
-        background-color: #ff7f50;
+        background-color: coral;
         font-weight: 700;
     }
     .table td{
@@ -151,7 +150,7 @@ while($data = $exe->fetch_array()){
         font-weight: 700;
     }
     .table h6{
-        background-color: #ff7f50;
+        background-color: coral;
         font-weight: 700;
     }
 </style>
