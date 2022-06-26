@@ -103,7 +103,7 @@ include'../403/petugas.php';
         <td><?=$data['id_barang']?></td>
         <td><?=$data['nama']?></td>
         <td><?=$data['harga']?></td>
-        <td><a href="../../system/petugas/sys-delete_keranjang.php?idkeranjang=<?=$data['idkeranjang']?>&idbarang=<?=$data['id_barang']?>&stok=<?=$data['stok']?>" class="btn btn-danger">Delete</a></td>
+        <td><a href="../../system/petugas/sys-delete_keranjang.php?idkeranjang=<?=$data['idkeranjang']?>&idbarang=<?=$data['id_barang']?>&stok=<?=$data['stok']?>"  class="fas fa-trash-alt"></a></td>
       </tr>
       <?php
     }
