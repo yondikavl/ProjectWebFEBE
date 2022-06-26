@@ -34,8 +34,8 @@ include'../403/admin.php';
               <a class="nav-link" href="?hal=pengguna">Pengguna</a>
             </li>
             <li class="nav-item">
-              <a class="btn-logout" href="../../system/system-logout.php">
-                <button type="button" class="btn btn-success">Logout</button>
+              <a href="../../system/system-logout.php">
+                <button type="button" class="btn btn-danger">Logout</button>
               </a>
             </li>
           </ul>
