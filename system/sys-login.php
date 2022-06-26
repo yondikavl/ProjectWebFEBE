@@ -46,6 +46,7 @@ if (isset($_POST['submit'])) {
 	}
 }else if($cek2){
 		$id_pelanggan = $data2['id_pelanggan'];
+		
 	$nama = $data2['nama'];
 	$alamat = $data2['alamat'];
 	$usernamep = $data2['username'];

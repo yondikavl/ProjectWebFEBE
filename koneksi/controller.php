@@ -16,7 +16,10 @@ if (isset($_GET['hal'])) {
 		include 'profile_admin.php';
 	}else if ($halaman == 'stok'){
 		include 'stok-petugas.php';
-	}else {
+	}else if($halaman == 'homepengguna'){
+		include'homepengguna.php';
+	}else if($halaman == 'katalog'){
+		include'katalog.php';
 	}
   }
 ?>

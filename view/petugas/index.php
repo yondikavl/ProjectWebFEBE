@@ -9,7 +9,7 @@ include'../403/petugas.php';
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard-Pengguna</title>
+    <title>Dashboard-Petugas</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
@@ -33,13 +33,14 @@ include'../403/petugas.php';
             <li class="nav-item">
               <a class="nav-link" href="?hal=stok">Stok</a>
             </li>
-            <li class="nav-item">
-              <a href="../../system/system-logout.php">
-                <button type="button" class="btn btn-danger">Logout</button>
-              </a>
-            </li>
+          
           </ul>
-        </div>
+        </div> 
+        <li class="nav-item">
+            <a class="btn-logout" href="../../system/system-logout.php">
+              <button type="button" class="btn btn-danger">LOGOUT</button>
+            </a>
+        </li>
       </div>
     </nav>
 
@@ -50,10 +51,6 @@ include'../403/petugas.php';
     <style>
       .navbar {
         background-color: #19123B;
-      }
-      .btn-logout {
-        margin-right: 20px;
-        margin-left: 1000px;
       }
     </style>
 

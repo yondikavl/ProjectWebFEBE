@@ -33,13 +33,13 @@ include'../403/admin.php';
             <li class="nav-item">
               <a class="nav-link" href="?hal=pengguna">Pengguna</a>
             </li>
-            <li class="nav-item">
-              <a href="../../system/system-logout.php">
-                <button type="button" class="btn btn-danger">Logout</button>
-              </a>
-            </li>
           </ul>
         </div>
+        <li class="nav-item">
+            <a class="btn-logout" href="../../system/system-logout.php">
+              <button type="button" class="btn btn-danger">LOGOUT</button>
+        </a>
+        </li>
       </div>
     </nav>
 
@@ -50,10 +50,6 @@ include'../403/admin.php';
     <style>
       .navbar {
         background-color: #19123B;
-      }
-      .btn-logout {
-        margin-right: 20px;
-        margin-left: 1000px;
       }
     </style>
 

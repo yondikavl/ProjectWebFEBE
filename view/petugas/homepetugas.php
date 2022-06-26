@@ -1,14 +1,32 @@
-<?php 
-include'../403/petugas.php';
-?>
- <!DOCTYPE html>
-     <html>
-         <head>
-         	<meta charset="utf-8">
-         	<meta name="viewport" content="width=device-width, initial-scale=1">
-         	<title>Home - Petugas</title>
-         </head>
-         <body>
-            <center><h1>Home Petugas</h1></center>
-         </body>
-     </html>
+<?php include '../403/petugas.php'; ?>
+
+<div class="container mt-3">
+ <?php 
+$id = $_SESSION['id_petugas'];
+$sql = "SELECT * FROM admin WHERE id_petugas = '$id'";
+include'../../koneksi/koneksi.php';
+$exe = $koneksi->query($sql);
+$data = $exe->fetch_array();
+ ?>
+    <center>
+    <img  width="100" src="../../assets/img/admin/<?=$data['foto']?>">
+    </center>
+    <table class="table center mt-4">
+        <tr>
+            <td>Nama</td>
+            <td><input class="form-control" type="text" name="" readonly="" value="<?= $data['nama'] ?>"></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input class="form-control" type="text" name="" readonly="" value="<?= $data['username'] ?>"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input class="form-control" type="text" name="" readonly="" value="<?= $data['password'] ?>"></td>
+        </tr>
+    
+        <tr>
+            <td>Level</td>
+            <td><input class="form-control" type="text" name="" readonly="" value="<?= $data['level'] ?>"></td>
+        </tr>
+    </table>
