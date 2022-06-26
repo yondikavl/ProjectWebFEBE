@@ -127,14 +127,13 @@ while($data = $exe->fetch_array()){
 	<thead>
 		<tr>
       <div class="d-flex justify-content-between">
-			  <td><h6>Total Bayar</h6></td>
+			  <th><h6>Total Bayar</h6></th>
       </div>
 		</tr>
 		<tr>
       <div class="d-flex justify-content-between">
 			  <td><h5>Total</h5></td>
-			  <td>Rp.</td>
-			  <td><?=$total - 1 ?></td>
+			  <td><?=$total - 1 ?>Rp.</td>
 			  <td><a href="../../system/petugas/sys-checkout.php?total=<?=$total?>" class="btn btn-success">Checkout</a></td>
 		  </div>
     </tr>
@@ -146,10 +145,7 @@ while($data = $exe->fetch_array()){
         background-color: #ff7f50;
         font-weight: 700;
     }
-    .table td{
-        background-color: #ff7f50;
-        font-weight: 700;
-    }
+    
     .table h6{
         background-color: #ff7f50;
         font-weight: 700;
