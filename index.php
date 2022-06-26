@@ -19,21 +19,21 @@
                   <p class="text-center mb-3 mt-2">LOGIN</p>
                   <form method="POST" action="system/sys-login.php">
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Username">
+                        <input type="text" class="form-control" placeholder="Username" name="username">
                       </div>
                      <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input name="password" type="password" class="form-control" placeholder="Password">
                       </div>
-                      <div class="row">
+                     <!--  <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Stay logged in</label>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                       <div class="form-group mt-3">
-                        <button type="button" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Submit</small></button>
+                        <button type="submit" name= "submit" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Submit</small></button>
                       </div>
                   </form>
                 </div>
