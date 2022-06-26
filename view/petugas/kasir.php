@@ -55,7 +55,7 @@ include'../403/petugas.php';
     include '../../koneksi/koneksi.php';
     if (isset($_POST['cari'])) {
     	$keyword = $_POST['keyword'];
-    	$sql = "SELECT * FROM  inventaris WHERE id_barang LIKE '%$keyword%' ";
+    	$sql = "SELECT * FROM  inventaris WHERE id_barang LIKE '%$keyword%' OR warna LIKE '%$keyword%' OR nama LIKE '%$keyword%' OR stok LIKE '%$keyword%' OR harga LIKE '%$keyword%' OR ukuran LIKE '%$keyword%' ";
     
     $exe = $koneksi->query($sql);
 
