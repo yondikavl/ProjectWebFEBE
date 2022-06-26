@@ -150,6 +150,9 @@ while($data = $exe->fetch_array()){
         background-color: #ff7f50;
         font-weight: 700;
     }
+    .btn{
+      color: #8d8c89;
+    }
 </style>
 </center>
 </body>
