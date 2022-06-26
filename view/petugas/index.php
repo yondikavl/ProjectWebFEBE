@@ -18,24 +18,24 @@ include'../403/petugas.php';
 
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="?hal=profile_admin"><?=$NamaPetugas?></a>
+        <a class="navbar-brand" href="?hal=profile_admin"><?=$Namapetugas?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="?hal=homeadmin">Home</a>
+              <a class="nav-link active" aria-current="page" href="?hal=homepetugas">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?hal=inventori">Kasir</a>
+              <a class="nav-link" href="?hal=kasir">Kasir</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?hal=pengguna">Stok</a>
+              <a class="nav-link" href="?hal=stok">Stok</a>
             </li>
             <li class="nav-item">
-              <a class="btn-logout" href="../../system/system-logout.php">
-                <button type="button" class="btn btn-success">Logout</button>
+              <a href="../../system/system-logout.php">
+                <button type="button" class="btn btn-danger">Logout</button>
               </a>
             </li>
           </ul>
