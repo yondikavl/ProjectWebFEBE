@@ -30,11 +30,12 @@ include'../403/petugas.php';
 
 <form method="POST" action="">
 <div class="input-group">
-  <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="keyword" placeholder="Ketikan id barang" />
+  <input type="text" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" name="keyword" placeholder="Ketikan (Id/Nama) Barang" />
   <input type="submit" class="btn btn-outline-primary" name="cari"/>
 </div>
 </form>
 <br>
+
   <table class="table table-striped">
   <thead>
     <tr>
@@ -103,7 +104,7 @@ include'../403/petugas.php';
         <td><?=$data['id_barang']?></td>
         <td><?=$data['nama']?></td>
         <td><?=$data['harga']?></td>
-        <td><a href="../../system/petugas/sys-delete_keranjang.php?idkeranjang=<?=$data['idkeranjang']?>&idbarang=<?=$data['id_barang']?>&stok=<?=$data['stok']?>" class="btn fas fa-trash-alt"></a></td>
+        <td><a href="../../system/petugas/sys-delete_keranjang.php?idkeranjang=<?=$data['idkeranjang']?>&idbarang=<?=$data['id_barang']?>&stok=<?=$data['stok']?>" class="btn btn-danger">Delete</a></td>
       </tr>
       <?php
     }
@@ -151,7 +152,8 @@ while($data = $exe->fetch_array()){
         font-weight: 700;
     }
     .btn{
-      color: #8d8c89;
+      color: #85e3ff; 
+      font-weight: 500;
     }
 </style>
 </center>
