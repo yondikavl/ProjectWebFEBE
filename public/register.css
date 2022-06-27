@@ -16,7 +16,7 @@ body{
 }
 .container{
     position: relative;
-    max-width: 430px;
+    max-width: 600px;
     width: 100%;
     background: #fff;
     border-radius: 10px;
@@ -27,7 +27,7 @@ body{
 .container .forms{
     display: flex;
     align-items: center;
-    height: 440px;
+    height: 600px;
     width: 200%;
     transition: height 0.2s ease;
 }
@@ -41,6 +41,14 @@ body{
     margin-left: -50%;
     opacity: 0;
     transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
 }
 .container.active .forms{
     height: 600px;

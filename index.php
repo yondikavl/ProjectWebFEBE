@@ -1,51 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-  <!-- CSS Only -->
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/login.css">
-
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/login.css">
+         
+    <!--<title>Login Form</title>-->
 </head>
 <body>
-          <div class="container">
-            <div class="row d-flex justify-content-center mt-5">
-              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card py-3 px-2">
-                  <p class="text-center mb-3 mt-2">LOGIN</p>
-                  <form method="POST" action="system/sys-login.php">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Username" name="username">
-                      </div>
-                     <div class="form-group">
-                        <input name="password" type="password" class="form-control" placeholder="Password">
-                      </div>
-                     <!--  <div class="row">
-                        <div class="col-md-6 col-12">
-                          <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Stay logged in</label>
-                          </div>
-                        </div>
-                      </div> -->
-                      <div class="form-group mt-3">
-                        <button type="submit" name= "submit" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Submit</small></button>
-                      </div>
-                  </form>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form method="POST" action="system/sys-login.php">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your Username" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Login">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link">Signup Now</a>
+                    </span>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
 
 </body>
-
-<!-- Script JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 </html>
-

@@ -49,8 +49,17 @@ include'../403/petugas.php';
 
     <!-- Style CSS -->
     <style>
+      /* ===== Google Font Import - Poformsins ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
       .navbar {
-        background-color: #19123B;
+        background-color: #4070f4;
       }
     </style>
 

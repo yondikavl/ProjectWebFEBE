@@ -49,7 +49,7 @@ include'../403/admin.php';
     <!-- Style CSS -->
     <style>
       .navbar {
-        background-color: #19123B;
+        background-color: #4070f4;
       }
     </style>
 
