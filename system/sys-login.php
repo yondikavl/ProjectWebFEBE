@@ -44,11 +44,17 @@ if (isset($_POST['submit'])) {
 			  		  </script>";
 			  		  
 			}else {
-				echo"level not found";
+				echo "<script>
+		 				alert('Level not found');
+		 				document.location.href='../'
+			  		  </script>";
 			}
 
 		}else {
-			echo "password salah";
+			echo "<script>
+		 				alert('password incorect');
+		 				document.location.href='../'
+			  		  </script>";
 		}
 	}else {
 		$sql2 = "SELECT * FROM pelanggan WHERE username = '$username'";
@@ -78,7 +84,10 @@ if (isset($_POST['submit'])) {
 			}
 
 		}else {
-			echo "username tidak ditemukan p";
+				echo "<script>
+		 				alert('password incorect');
+		 				document.location.href='../'
+			  		  </script>";
 		}
 	}
 }
