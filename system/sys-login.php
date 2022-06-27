@@ -1,56 +1,70 @@
+
 <?php 
 session_start();
+include'../koneksi/koneksi.php';
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
 if (isset($_POST['submit'])) {
+	
+	$sql = "SELECT * FROM admin WHERE username = '$username'";
+	$exe = $koneksi->query($sql);
+	$cek = $exe->num_rows;
 
-	include '../koneksi/koneksi.php';
-
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-
-	$sql = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'";
-	$exe  = $koneksi->query($sql);
-	$cek  = $exe->num_rows;
 	$data = $exe->fetch_array();
+	if ($cek > 0) {
 
-	$sql2 = "SELECT * FROM pelanggan WHERE username = '$username' AND password = '$password'";
-	$exe2  = $koneksi->query($sql2);
-	$cek2  = $exe2->num_rows;
-	$data2 = $exe2->fetch_array();
+		$getNama    = $data['nama'];
+		$getId  = $data['id_petugas'];
+		$getLevel = $data['level'];
+		$getpassword = $data['password'];
 
-	if ($cek) {
-	$getNama    = $data['nama'];
-	$getId  = $data['id_petugas'];
-	$getLevel = $data['level'];
+		if (password_verify($password, $getpassword)) {
+			
+			if ($getLevel == 'admin') {
+				$_SESSION['level_admin'] = $getLevel;
+				$_SESSION['id_getId'] = $getId;
+				$_SESSION['Nama_Admin'] = $getNama;
 
-	if ($getLevel == 'admin') {
+				echo "<script>
+		 				alert('Selamat datang admin-$getNama');
+		 				document.location.href='../view/admin/'
+			  		  </script>";
 
-		$_SESSION['level_admin'] = $getLevel;
-		$_SESSION['id_getId'] = $getId;
-		$_SESSION['Nama_Admin'] = $getNama;
+			}else if ($getLevel == 'petugas') {
 
-		echo "<script>
- 				alert('Selamat datang admin-$getNama');
- 				document.location.href='../view/admin/'
-	  		  </script>";
+				$_SESSION['level_petugas'] = $getLevel;
+				$_SESSION['id_petugas'] = $getId;
+				$_SESSION['Nama_petugas'] = $getNama;
 
-	}else if($getLevel == 'petugas') {
+				echo "<script>
+		 				alert('Selamat datang petugas-$getNama');
+		 				document.location.href='../view/petugas/'
+			  		  </script>";
+			  		  
+			}else {
+				echo"level not found";
+			}
 
-		$_SESSION['level_petugas'] = $getLevel;
-		$_SESSION['id_petugas'] = $getId;
-		$_SESSION['Nama_petugas'] = $getNama;
-
-		echo "<script>
- 				alert('Selamat datang petugas-$getNama');
- 				document.location.href='../view/petugas/'
-	  		  </script>";
-	}
-}else if($cek2){
-		$id_pelanggan = $data2['id_pelanggan'];
-		
-	$nama = $data2['nama'];
-	$alamat = $data2['alamat'];
-	$usernamep = $data2['username'];
-	$passwordp = $data2['password'];
+		}else {
+			echo "password salah";
+		}
+	}else {
+		$sql2 = "SELECT * FROM pelanggan WHERE username = '$username'";
+		$exe2 = $koneksi->query($sql2);
+		$cek2 = $exe2->num_rows;
+		$data2 = $exe2->fetch_array();
+		$getpasswordp= $data2['password'];
+		var_dump($getpasswordp);
+		if ($cek2 > 0) {
+			if (password_verify($password, $getpasswordp)) {
+				
+				$nama = $data2['nama'];
+				$alamat = $data2['alamat'];
+				$usernamep = $data2['username'];
+				$passwordp = $data2['password'];
+				$id_pelanggan = $data2['id_pelanggan'];
 
 		$_SESSION['id_pelanggan'] = $id_pelanggan;
 		$_SESSION['nama_pelanggan'] = $nama;
@@ -58,15 +72,16 @@ if (isset($_POST['submit'])) {
 		$_SESSION['usernamep'] = $usernamep;
 		$_SESSION['passwordp'] = $passwordp;
 		
-	echo "<script>
- 				document.location.href='../public/';
-	  		  </script>";
-}else{
+					echo "<script>
+				 				document.location.href='../public/';
+					  		  </script>";
+			}
 
-		echo "<script>
-				alert('Username Atau password salah');
-				document.location.href='../index.php'
-			  </script>";	  	
+		}else {
+			echo "username tidak ditemukan p";
+		}
 	}
 }
+
+
  ?>

@@ -6,6 +6,7 @@
 		$nama_petugas = $_POST['nama_petugas'];
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		$passwordhashed = password_hash($password, PASSWORD_DEFAULT);
 		$level = $_POST['level'];
 		$foto = $_FILES['foto']['name'];
 		$tmp = $_FILES['foto']['tmp_name'];
@@ -20,7 +21,7 @@ if ($cek) {
 	  		  </script>";
 }else{
 
-		$sql = "INSERT INTO admin VALUES('','$nama_petugas','$username','$password','$level','$foto')";
+		$sql = "INSERT INTO admin VALUES('','$nama_petugas','$username','$passwordhashed','$level','$foto')";
 		$exe = $koneksi->query($sql);
 		move_uploaded_file($tmp, "../../assets/img/admin/$foto");
 
