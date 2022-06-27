@@ -1,0 +1,28 @@
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    background-color: #4070f4;
+}
+.btn-login {
+    margin-right: 20px;
+    margin-left: 1000px;
+}
+.hero-img {
+    margin-top: 50px;
+}
+.text-hero {
+    margin-top: 50px;
+}
+.btn-hero {
+    margin-top: 50px;
+}
+.wave-img {
+    margin-top: 60px;
+}

@@ -23,23 +23,23 @@
 
                 <form method="POST" action="system/sys-login.php">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your Username" required>
+                        <input name ="username" type="text" placeholder="Enter your Username" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <input name="password" type="password" class="password" placeholder="Enter your password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Login">
+                        <input type="submit" name="submit" value="Login">
                     </div>
                 </form>
 
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="#" class="text signup-link">Signup Now</a>
+                        <a href="public/register.php" class="text signup-link">Signup Now</a>
                     </span>
                 </div>
             </div>

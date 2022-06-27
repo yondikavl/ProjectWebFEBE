@@ -28,6 +28,7 @@ include'../403/admin.php';
             <tr>
                 <td>Total Pendapatan</td>
                  <td>:</td>
+                 <td></td>
                  <td>Rp</td>
                   <td><?= $total - 1 ?> </td>
             </tr>
@@ -38,6 +39,7 @@ include'../403/admin.php';
             <th scope="col">No</th>
             <th scope="col">No Transaksi</th>
             <th scope="col">Total Masuk</th>
+            <th scope="col">Petugas</th>
             <th scope="col">Aksi</th>
           </tr>
         </thead>
@@ -54,6 +56,7 @@ include'../403/admin.php';
                   <td><?=$no++?></td>
                   <td><?=$data['idkas']?></td>
                   <td><?=$data['dana']?></td>
+                  <td><?=$data['nama']?></td>
                   <td>
                     <a href="../../system/admin/sys-hapuskas.php?idkas=<?=$data['idkas']?>" class="btn btn-danger">DELETE</a>
                   </td>

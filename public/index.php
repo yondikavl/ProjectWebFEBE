@@ -45,13 +45,12 @@ session_start();
           <li class="nav-item">
             <a class="nav-link " aria-current="page" href="../public/">Home</a>
           </li>
-          <li class="nav-item">
+        
+        </ul>
+      </div>
             <a class="btn-login" href="../system/system-logout.php">
               <button type="button" class="btn btn-danger">LOGOUT</button>
             </a>
-          </li>
-        </ul>
-      </div>
     </div>
   </nav>
 

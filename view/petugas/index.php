@@ -36,11 +36,9 @@ include'../403/petugas.php';
           
           </ul>
         </div> 
-        <li class="nav-item">
             <a class="btn-logout" href="../../system/system-logout.php">
               <button type="button" class="btn btn-danger">LOGOUT</button>
             </a>
-        </li>
       </div>
     </nav>
 

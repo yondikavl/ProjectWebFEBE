@@ -35,11 +35,9 @@ include'../403/admin.php';
             </li>
           </ul>
         </div>
-        <li class="nav-item">
             <a class="btn-logout" href="../../system/system-logout.php">
               <button type="button" class="btn btn-danger">LOGOUT</button>
         </a>
-        </li>
       </div>
     </nav>
 

@@ -1,9 +1,9 @@
-
- <div class="container mt-3">
+ <div class="container mt-3"> 
+    <center><h2>Informasi Pengguna</h2></center>
     <!-- <center>
     <img  width="100" src="../../assets/img/admin/<?=$data['foto']?>">
-    </center> -->
-    <center><h2>Informasi Pengguna</h2></center>
+    </center>  -->
+   
     <table class="table center mt-4">
         <tr>
             <td>Nama</td>
@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Password</td>
-            <td><input class="form-control" type="text" name="" readonly="" value="<?= $passwordp?>"></td>
+            <td><input class="form-control" type="text" name="" readonly="" value="<?= $passwordp?>"><i class="fa-solid fa-eye showHidePw"></i></td>
         </tr>
     
         <tr>
