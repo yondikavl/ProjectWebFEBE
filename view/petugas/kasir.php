@@ -25,7 +25,7 @@ include'../403/petugas.php';
 
 <center  style = "margin: 50px;">
 
-<h5 style="float: left; margin: 0;">Kasir</h5>
+<h2 style="float: left; margin: 0;">Kasir</h2>
 <br>
 
 <form method="POST" action="">
