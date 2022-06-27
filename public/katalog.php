@@ -1,28 +1,38 @@
 
 <style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+	*{
+		font-family: 'Poppins', sans-serif;
+	}
+	body {
+		background-color: #4070f4;
+	}
 	.container-photocard{
 		display: inline-flex;
-		padding-left: 30px;
+		padding-left: 40px;
 		padding: 10px;
-		border-style: solid;
-	  	border-color: black;
 	  	margin-left: 20px;
 	  	margin-bottom: 10px;
+		margin-top: 20px;
+		background-color: #fff;
+		border-radius:10px;
 	}
 	.photocard img{
 		width:200px;
 		height:250px; 
 		border-style: solid;
-	  	border-color: black;
+	  	border-color: #4070f4;
+		border-radius: 10px;
 	}
 	.photocard h5{
-		color: blue;
+		color: #4070f4;
 	}
 	.judul{
 		padding: 10px;
 		margin-bottom: 10px;
 	}
+	
 </style>
 
   <div class="hero-img">
