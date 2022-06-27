@@ -1,159 +1,80 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kasir</title>
-</head>
-
-<style type="text/css">
-  img {
-    width: 50px;
-  }
-
-  img:hover {
-    width: 350px;
-    transition: 6s;
-  }
-</style>
-
-<body>
-
-<center  style = "margin: 50px;">
-
-<h5 style="float: left; margin: 0;">Kasir</h5>
-<br>
-
-<form method="POST" action="">
-<div class="input-group">
-  <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="keyword" placeholder="Ketikan id barang" />
-  <input type="submit" class="btn btn-outline-primary" name="cari"/>
-</div>
+<section class="head">
+<h2>Form Registration</h2>
+<form action="" method="Post">
+</section>
+<section class="form">
+<table>
+  <tr>
+    <td width="120"><h4>Nama</h4></td>
+    <td><input type="text"></td>
+  </tr>
+  <tr>
+    <td><h4>Password</h4></td>
+    <td><input type="password"></td>
+  </tr>
+  <tr>
+    <td><h4>ID Pegawai</h4></td>
+    <td><input type="number"></td>
+  </tr>
+  <tr>
+    <td><h4>Tanggal</h4></td>
+    <td><input type="date"></td>
+  </tr>
+  <tr>
+    <td><h4>Jenis Kelamin</h4></td>
+    <td><input type="radio" name=""jk> Laki-laki 
+        <input type="radio" name=""jk> Perempuan
+    </td>
+  </tr>
+  <tr>
+    <td><h4>Hobi</h4></td>
+    <td><input type="checkbox" > Berenang
+        <input type="checkbox" > Bernyanyi
+    </td>
+  </tr>
+  <tr>
+    <td><h4>Jabatan</h4></td>
+    <td><select>
+      <option>Direktur</option>
+      <option>Mahasiswa</option>
+      <option>Dosen</option>
+    </select> 
+    </td>
+  </tr>
+  <tr>
+    <td><h4>Alamat</h4></td>
+    <td><textarea></textarea></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" value="Simpan">
+        <input type="reset" value="Reset">
+        <input type="button" value="Kembali">
+  </tr>
+</section>
+  <style>
+    .form td h4{
+      font-weight: 200;
+      text-align: left;
+      
+    }
+    .form{
+      background-color: lightblue;
+      position: fixed;
+      margin-top: -100px;
+      margin-left: -200px;
+      left: 50%;
+      top: 40%;
+      width: 400px;
+      height: 400px;
+    }
+    .head h2{
+      color: blue;
+      position: absolute;
+      margin-top: 100px;
+      margin-left: 35%;
+      
+    }
+  </style>
+</table>  
 </form>
-
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Id Barang</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Ukuran</th>
-      <th scope="col">Warna</th>
-      <th scope="col">Stok</th>
-      <th scope="col">Harga</th>
-      <th scope="col">Foto</th>
-      <th scope="col">Aksi</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <?php 
-    include '../../koneksi/koneksi.php';
-    if (isset($_POST['cari'])) {
-    	$keyword = $_POST['keyword'];
-    	$sql = "SELECT * FROM  inventaris WHERE id_barang LIKE '%$keyword%' OR warna LIKE '%$keyword%' OR nama LIKE '%$keyword%' OR stok LIKE '%$keyword%' OR harga LIKE '%$keyword%' OR ukuran LIKE '%$keyword%' ";
-    
-    $exe = $koneksi->query($sql);
-
-    $no = 1;
-    while ($data1 = $exe->fetch_array()) {
-      ?>
-      <tr>
-        <td><?=$no++?></td>
-        <td><?=$data1['id_barang']?></td>
-        <td><?=$data1['nama']?></td>
-        <td><?=$data1['ukuran']?></td>
-        <td><?=$data1['warna']?></td>
-        <td><?=$data1['stok']?></td>
-        <td><?=$data1['harga']?></td>
-        <td><img class="img-fluid" src="../../assets/img/Inventory/<?=$data1['foto']?>"></td>
-        <td><a href="../../system/petugas/sys-tambah_keranjang.php?idbarang=<?=$data1['id_barang']?>&namabarang=<?=$data1['nama']?>&hargabarang=<?=$data1['harga']?>&stok=<?=$data1['stok']?>" class="btn btn-primary btn-md">Tambah</a></td>
-      </tr>
-      <?php
-    }
-}
-     ?>
-  </tbody>
-</table>
-<br>
-<h5>Keranjang</h5>
-<table class="table table-striped" class="container my-5">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Id Barang</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Harga</th>
-      <th scope="col">Aksi</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php 
-    $sql = "SELECT * FROM  keranjang ";
-    $exe = $koneksi->query($sql);
-    $no = 1;
-    while ($data = $exe->fetch_array()) {
-      ?>
-      <tr>
-        <td><?=$no++?></td>
-        <td><?=$data['id_barang']?></td>
-        <td><?=$data['nama']?></td>
-        <td><?=$data['harga']?></td>
-        <td><a href="../../system/petugas/sys-delete_keranjang.php?idkeranjang=<?=$data['idkeranjang']?>&idbarang=<?=$data['id_barang']?>&stok=<?=$data['stok']?>" class="btn btn-danger" class="fas fa-trash-alt"></a></td>
-      </tr>
-      <?php
-    }
-     ?>
-  </tbody>
-</table> -->
-
-<?php 
-
-$sql="SELECT harga FROM keranjang ";
-$exe = $koneksi->query($sql);
-$total = 1;
-
-
-while($data = $exe->fetch_array()){
-	$total = $total + $data['harga'] ;
-}
-
- ?>
-<table class="table table-striped" >
-	<thead>
-		<tr>
-            <div class="d-flex justify-content-between">
-			
-			<td><h6>Total Bayar</h6></td>
-			
-            </div>
-		</tr>
-		<tr>
-            <div class="d-flex justify-content-between">
-			<td><h5>Total</h5></td>
-			<td>Rp.</td>
-			<td><?=$total - 1 ?></td>
-			<td><a href="../../system/petugas/sys-checkout.php?total=<?=$total?>" class="btn btn-success">Checkout</a></td>
-		    </div>
-        </tr>
-
-	</thead>
-</table>
-<style>
-    .table th{
-        background-color: coral;
-        font-weight: 700;
-    }
-    .table td{
-        background-color: #ff7f50;
-        font-weight: 700;
-    }
-    .table h6{
-        background-color: coral;
-        font-weight: 700;
-    }
-</style>
-</center>
-</body>
-</html>
