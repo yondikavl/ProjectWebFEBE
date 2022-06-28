@@ -23,12 +23,15 @@
         <form method="POST" action="">
           <button style="float:left;" type="submit" class="btn btn-primary" name="tambah_pengguna"> Tambah</button>
         </form>
-
+        
         <?php 
         if (isset($_POST['tambah_pengguna'])) {
           include'tambah_pengguna.php';
         }
          ?>
+     
+      <section class="toko">
+      <br> <br>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -39,8 +42,10 @@
               <th scope="col">Password</th>
               <th scope="col">Level</th>
               <th scope="col">Foto</th>
+              <th scope="col">Aksi</th>
             </tr>
           </thead>
+      </section>
           <tbody>
             <?php 
             include '../../koneksi/koneksi.php';
@@ -64,6 +69,12 @@
               <?php } ?>
           </tbody>
         </table>
+        <style>
+          .toko table th{
+            background-color: #0099ff;
+            font-weight: 700;
+          }
+        </style>
       </center>
     </body>
   </html>

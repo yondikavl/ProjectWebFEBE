@@ -23,6 +23,7 @@ include'../403/admin.php';
                   $total  = $total + $data['dana'];
           }
       ?>
+    <section class="toko">
       <table class="table table-striped">
         <thead>
             <tr>
@@ -32,16 +33,17 @@ include'../403/admin.php';
                   <td><?= $total - 1 ?> </td>
             </tr>
           </thead>
-
-        <thead>
+          
+        <thead>  
           <tr>
             <th scope="col">No</th>
             <th scope="col">No Transaksi</th>
             <th scope="col">Total Masuk</th>
             <th scope="col">Aksi</th>
           </tr>
+        
         </thead>
-
+    </section>
         <tbody>
           <?php 
             include '../../koneksi/koneksi.php';
@@ -61,6 +63,16 @@ include'../403/admin.php';
           <?php } ?>
         </tbody>
       </table>
+      <style>
+          .toko table th{
+            background-color: #0099ff;
+            font-weight: 700;
+          }
+          .toko table td{
+            background-color: #ccffff;
+            font-weight: 700;
+          }
+        </style>
     </center>
   </body>
 </html>
