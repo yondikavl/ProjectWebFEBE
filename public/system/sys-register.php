@@ -1,63 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registration Page</title>
+<?php 
+include '../../koneksi/koneksi.php';
+if (isset($_POST['register'])) {
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $no_hp = $_POST['no_hp'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $passwordhashed = password_hash($password, PASSWORD_DEFAULT);
     
-    <!-- ===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    $sql1 = "SELECT username FROM pelanggan WHERE username = '$username'";
+    $exe1 = $koneksi->query($sql1);
+    $cek = $exe1->num_rows;
 
-    <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="../assets/css/register.css">
-         
-</head>
-<body>
-    
-    <div class="container">
-        <div class="forms">
-            <div class="form login">
-                <span class="title">Registration</span>
+    if ($cek == 1) {
+            echo "<script>
+                alert('Maaf username sudah digunakan!');
+                window.location.href='../register.php'
+              </script>";
+    }else {
+        $sql2 = "INSERT INTO pelanggan VALUES ('','$nama','$no_hp','$alamat','$username','$passwordhashed')";
+        $exe2 = $koneksi->query($sql2);
 
-                <form method="POST" action="system/sys-register.php">
-                    <div class="input-field">
-                        <input name="nama" type="text" placeholder="Enter your Name" required>
-                        <i class="fa-solid fa-user icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input name="alamat" type="text" placeholder="Enter your Address" required>
-                        <i class="fa-solid fa-location-dot icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input name="no_hp" type="text" placeholder="Enter your Phone Number" required>
-                        <i class="fa-solid fa-phone icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input name="username"  type="text" placeholder="Enter your Username" required>
-                        <i class="fa-solid fa-at icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input name="password" type="password" class="password" placeholder="Enter your password" required>
-                        <i class="fa-solid fa-lock"></i>
-                        <i class="fa-solid fa-eye showHidePw"></i>
-                    </div>
-
-                    <div class="input-field button">
-                        <input type="submit" value="Login" name="register">
-                    </div>
-                </form>
-
-                <div class="login-signup">
-                    <span class="text">Already a member?
-                        <a href="../" class="text login-link">Login Now</a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="../assets/js/register.js"></script>
-    <script src="https://kit.fontawesome.com/861b96d111.js" crossorigin="anonymous"></script>
-
-</body>
-</html>
+        if (!$exe2) {
+            echo "<script>
+                alert('Internal error : Try again later');
+                window.location.href='../register.php'
+              </script>";
+        }else {
+            echo "<script>
+                alert('Anda sekarang sudah terdaftar');
+                window.location.href='../../'
+              </script>";
+        }
+    }
+}
+ 
