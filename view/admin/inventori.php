@@ -41,21 +41,23 @@ include'../403/admin.php';
               <input type="submit" class="btn btn-outline-primary" name="cari"/>
             </div>
         </form>
-
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Id Barang</th>
-              <th scope="col">Nama</th>
-              <th scope="col">Ukuran</th>
-              <th scope="col">Warna</th>
-              <th scope="col">Stok</th>
-              <th scope="col">Harga</th>
-              <th scope="col">Foto</th>
-              <th scope="col">Aksi</th>
-            </tr>
-          </thead>
+        <br>
+        <section class="toko">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Id Barang</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Ukuran</th>
+                <th scope="col">Warna</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Aksi</th>
+              </tr>
+            </thead>
+        </section>
 
           <tbody>
            <?php 
@@ -86,6 +88,12 @@ include'../403/admin.php';
               <?php } ?>
           </tbody>
         </table>
+        <style>
+          .toko table th{
+            background-color: #0099ff;
+            font-weight: 700;
+          }
+        </style>
       </center>
     </body>
   </html>
