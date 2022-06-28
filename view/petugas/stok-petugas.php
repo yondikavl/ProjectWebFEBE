@@ -34,7 +34,8 @@ include'../403/petugas.php';
   <input type="submit" class="btn btn-outline-primary" name="cari"/>
 </div>
 </form>
-
+<br>
+<section class="toko">
   <table class="table table-striped">
   <thead>
     <tr>
@@ -48,6 +49,8 @@ include'../403/petugas.php';
       <th scope="col">Foto</th>
     </tr>
   </thead>
+</section>
+
   <tbody>
     <?php 
     include '../../koneksi/koneksi.php';
@@ -78,7 +81,12 @@ include'../403/petugas.php';
      ?>
   </tbody>
 </table>
-
+<style>
+  .toko table th{
+    background-color: #ff7f50;
+    font-weight: 700;
+  }
+</style>
 </center>
 </body>
 </html>
