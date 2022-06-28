@@ -26,6 +26,7 @@ if (isset($_POST['register'])) {
                 alert('Internal error : Try again later');
                 window.location.href='../register.php'
               </script>";
+              
         }else {
             echo "<script>
                 alert('Anda sekarang sudah terdaftar');

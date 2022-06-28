@@ -62,8 +62,9 @@ if (isset($_POST['submit'])) {
 		$cek2 = $exe2->num_rows;
 		$data2 = $exe2->fetch_array();
 		$getpasswordp= $data2['password'];
-		var_dump($getpasswordp);
+
 		if ($cek2 > 0) {
+
 			if (password_verify($password, $getpasswordp)) {
 				
 				$nama = $data2['nama'];
@@ -72,23 +73,27 @@ if (isset($_POST['submit'])) {
 				$passwordp = $data2['password'];
 				$id_pelanggan = $data2['id_pelanggan'];
 
-		$_SESSION['id_pelanggan'] = $id_pelanggan;
-		$_SESSION['nama_pelanggan'] = $nama;
-		$_SESSION['alamatp'] = $alamat;
-		$_SESSION['usernamep'] = $usernamep;
-		$_SESSION['passwordp'] = $passwordp;
+				$_SESSION['id_pelanggan'] = $id_pelanggan;
+				$_SESSION['nama_pelanggan'] = $nama;
+				$_SESSION['alamatp'] = $alamat;
+				$_SESSION['usernamep'] = $usernamep;
+				$_SESSION['passwordp'] = $passwordp;
 		
 					echo "<script>
 				 				document.location.href='../public/';
 					  		  </script>";
-			}
-
-		}else {
+			}else {
 				echo "<script>
 		 				alert('password incorect');
 		 				document.location.href='../'
 			  		  </script>";
+
 		}
+		}echo "<script>
+		 				alert('username incorect');
+		 				document.location.href='../'
+			  		  </script>";
+
 	}
 }
 
