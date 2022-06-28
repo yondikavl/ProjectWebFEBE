@@ -25,15 +25,16 @@ include'../403/petugas.php';
 
 <center  style = "margin: 50px;">
 
-<h5 style="float: left; margin: 0;">Kasir</h5>
+<h2 style="float: left; margin: 0;">Kasir</h2>
 <br>
 
 <form method="POST" action="">
 <div class="input-group">
-  <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="keyword" placeholder="Ketikan id barang" />
+  <input type="text" class="form-control rounded" aria-label="Search" aria-describedby="search-addon" name="keyword" placeholder="Ketikan (Id/Nama) Barang" />
   <input type="submit" class="btn btn-outline-primary" name="cari"/>
 </div>
 </form>
+<br>
 
   <table class="table table-striped">
   <thead>
@@ -123,27 +124,38 @@ while($data = $exe->fetch_array()){
 }
 
  ?>
-<table class="table table-striped">
+<table class="table table-striped" >
 	<thead>
 		<tr>
-			<td></td>
-			<td>Total Bayar</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			
+      <div class="d-flex justify-content-between">
+			  <th><h6>Total Bayar</h6></th>
+      </div>
 		</tr>
 		<tr>
-			<td></td>
-			<td>:Rp.</td>
-			<td><?=$total - 1 ?></td>
-			<td></td>
-			<td><a href="../../system/petugas/sys-checkout.php?total=<?=$total?>" class="btn btn-success">Checkout</a></td>
-		</tr>
+      <div class="d-flex justify-content-between">
+			  <td><h5>Total</h5></td>
+			  <td><?=$total - 1 ?>Rp.</td>
+			  <td><a href="../../system/petugas/sys-checkout.php?total=<?=$total?>" class="btn btn-success">Checkout</a></td>
+		  </div>
+    </tr>
 
 	</thead>
 </table>
-
+<style>
+    .table th{
+        background-color: #ff7f50;
+        font-weight: 700;
+    }
+    
+    .table h6{
+        background-color: #ff7f50;
+        font-weight: 700;
+    }
+    .btn{
+      color: #85e3ff; 
+      font-weight: 500;
+    }
+</style>
 </center>
 </body>
 </html>
